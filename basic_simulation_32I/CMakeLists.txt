@@ -1,0 +1,74 @@
+cmake_minimum_required(VERSION 3.14)
+project(RISC_V_32I)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
+
+include_directories(.)
+
+add_executable(RISC_V_32I
+        Executors32I/B32Executor.cpp
+        Executors32I/B32Executor.h
+        Formats32I/B32Format.cpp
+        Formats32I/B32Format.h
+        Include/BinaryUtils.cpp
+        Include/BinaryUtils.h
+        Include/ExecutionEnvironment.cpp
+        Include/ExecutionEnvironment.h
+        Include/Executor.cpp
+        Include/Executor.h
+        Include/ExecutorFactory.cpp
+        Include/ExecutorFactory.h
+        Include/Format.cpp
+        Include/Format.h
+        RISC_V_32I.h
+        Executors32I/I32Executor.cpp
+        Executors32I/I32Executor.h
+        Formats32I/I32Format.cpp
+        Formats32I/I32Format.h
+        InputManager.cpp
+        InputManager.h
+        Include/InstructionBits.cpp
+        Include/InstructionBits.h
+        Include/RiscVCore.h
+        Instructions32I/Instructions32I_B.cpp
+        Instructions32I/Instructions32I_B.h
+        Instructions32I/Instructions32I_I.cpp
+        Instructions32I/Instructions32I_I.h
+        Instructions32I/Instructions32I_J.cpp
+        Instructions32I/Instructions32I_J.h
+        Instructions32I/Instructions32I_R.cpp
+        Instructions32I/Instructions32I_R.h
+        Instructions32I/Instructions32I_S.cpp
+        Instructions32I/Instructions32I_S.h
+        Instructions32I/Instructions32I_U.cpp
+        Instructions32I/Instructions32I_U.h
+        Executors32I/J32Executor.cpp
+        Executors32I/J32Executor.h
+        Formats32I/J32Format.cpp
+        Formats32I/J32Format.h
+        main.cpp
+        Include/Memory.cpp
+        Include/Memory.h
+        OutputManager.cpp
+        OutputManager.h
+        Executors32I/R32Executor.cpp
+        Executors32I/R32Executor.h
+        Formats32I/R32Format.cpp
+        Formats32I/R32Format.h
+        Include/Registers.cpp
+        Include/Registers.h
+        Include/RiscVException.h
+        Executors32I/S32Executor.cpp
+        Executors32I/S32Executor.h
+        Formats32I/S32Format.cpp
+        Formats32I/S32Format.h
+        Simulation.h
+        Include/TrapHandler.cpp
+        Include/TrapHandler.h
+        Executors32I/U32Executor.cpp
+        Executors32I/U32Executor.h
+        Formats32I/U32Format.cpp
+        Formats32I/U32Format.h
+        Include/Utilities.cpp
+        Include/Utilities.h)
