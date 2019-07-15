@@ -29,7 +29,7 @@ static constexpr std::string_view xpct_register_regex_base()
 
 static constexpr std::string_view xpct_mem_regex_base()
 {
-	return "mem_MD_(_MLT_)_VD_(_MVT_)";
+	return "(_MLT_)_VD_(_MVT_)";
 }
 
 static constexpr std::string_view xpct_pc_regex_base()
@@ -40,9 +40,9 @@ static constexpr std::string_view xpct_pc_regex_base()
 extern XPCTReader make_xpct_reader(std::string_view&& value_delimiter = "=",
 								   std::string_view&& mem_delimiter = "\\.",
 								   ReadMode register_read_mode = ReadMode::dec,
-								   ReadMode memory_location_mode = ReadMode::hex,
+								   ReadMode memory_location_mode = ReadMode::dec,
 								   ReadMode memory_value_mode = ReadMode::hex,
-								   ReadMode pc_read_mode = ReadMode::hex);
+								   ReadMode pc_read_mode = ReadMode::dec);
 
 
 

@@ -10,10 +10,10 @@ struct TestResult
 	
 	TestResult() = default;
 	TestResult(TestResult&& result);
-	TestResult(const std::string_view& test_name) : test_name_(test_name) {}
+	TestResult(const std::string& test_name) : test_name_(test_name) {}
 	bool has_passed() const noexcept;
 	std::vector<std::string>& fail_messages() noexcept;
-	std::string_view& name_of_test() noexcept;
+	std::string& name_of_test() noexcept;
 	bool empty() noexcept;
 	TestResult& operator=(TestResult&& result) noexcept
 	{
@@ -23,7 +23,7 @@ struct TestResult
 	}
 	private:
 		std::vector<std::string> failure_messages{};
-		std::string_view test_name_{};
+		std::string test_name_{};
 };
 
 #endif

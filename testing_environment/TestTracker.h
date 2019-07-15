@@ -14,12 +14,14 @@ struct TestTracker
 	{
 		tracker.passed_tests = 0;
 	}
-	void set_current_test(const std::string_view& name) noexcept;
+	void set_current_test(const std::string& name) noexcept;
 	void test_finished();
 	void add_message(std::string&& message);
 	void output_results() noexcept;
+	void output_single_test_result(const std::string& test_name) noexcept;
+	bool all_success() noexcept;
 	private:
-		std::vector<TestResult> results;
+		std::unordered_map<std::string, TestResult> results;
 		TestResult current_test;
 		std::size_t passed_tests = 0;
 	

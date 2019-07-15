@@ -43,6 +43,22 @@ int main(int argc, char** argv)
 		test_file_pair = dir_manager.next_test_pair();
 	}
 	tracker.output_results();
+	if(tracker.all_success())
+    {
+	    std::cout << "\nExiting\n";
+    } else
+    {
+        std::string input;
+        while(std::getline(std::cin, input))
+        {
+            if(input == "exit")
+            {
+                std::cout << "\nExiting\n";
+                break;
+            }
+            tracker.output_single_test_result(input);
+        }
+    }
 //	auto out_data = out_reader.read(input_stream_out, file_name);
 //	auto xpct_data = xpct_reader.read(input_stream_xpct, file_name);
 ////

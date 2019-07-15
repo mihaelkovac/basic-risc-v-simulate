@@ -9,7 +9,7 @@
 struct TestComparator
 {
 	TestComparator(TestTracker& tracker) : tracker_(tracker) { }
-	virtual void compare_out_and_xpct(OutData& out_data, ExpectedData& exp_data, const std::string_view& file_name);
+	virtual void compare_out_and_xpct(OutData& out_data, ExpectedData& exp_data, const std::string& file_name);
 	private:
 		TestTracker& tracker_;
 };

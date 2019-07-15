@@ -16,7 +16,7 @@ std::vector<std::string>& TestResult::fail_messages() noexcept
 	return this->failure_messages;
 }
 
-std::string_view& TestResult::name_of_test() noexcept
+std::string& TestResult::name_of_test() noexcept
 {
 	return this->test_name_;
 }

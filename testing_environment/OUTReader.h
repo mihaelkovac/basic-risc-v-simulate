@@ -34,7 +34,7 @@ static constexpr std::string_view out_pc_regex_base()
 
 extern OUTReader make_out_reader(std::string_view&& value_delimiter = ":",
 								 ReadMode register_read_mode = ReadMode::dec,
-								 ReadMode memory_location_mode = ReadMode::hex,
+								 ReadMode memory_location_mode = ReadMode::dec,
 								 ReadMode memory_value_mode = ReadMode::dec,
 								 ReadMode pc_read_mode = ReadMode::dec);
 

@@ -49,7 +49,7 @@ namespace risc
 		void fill_at(std::size_t location, Number bytes, unsigned int num_of_bytes = sizeof(Number))
 		{
 
-			if(location + num_of_bytes >= this->size_in_bytes)
+			if(location + num_of_bytes > this->size_in_bytes)
 			{
 				throw std::runtime_error("Cannot fill memory at specified location -- MEMORY OVERFLOW\n");
 			}

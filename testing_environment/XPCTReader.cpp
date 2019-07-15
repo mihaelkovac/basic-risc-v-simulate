@@ -37,12 +37,8 @@ ExpectedData XPCTReader::read(std::ifstream& stream, const std::string_view& fil
 			{
 				formatter >> register_value;
 			}
-			
-			if(register_number >= data.registers.size())
-			{
-				data.registers.resize(register_number + 1);
-			}
-			data.registers[register_number] = register_value;
+
+			data.registers.push_back({register_number, register_value});
 		} 
 		else if(std::regex_match(line, m, this->mem_rgx))
 		{
